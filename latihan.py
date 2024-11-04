@@ -86,3 +86,7 @@ if __name__ == "__main__":
     queue.addData(24,7)
     queue.addData(29,10)
     queue.printAll()
+    print("==========================")
+    queue.remove()
+    queue.remove()
+    queue.printAll()
