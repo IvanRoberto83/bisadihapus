@@ -74,6 +74,25 @@ class PriorityQueue:
                     while self._tail._next != None:
                         self._tail = self._tail._next
             self._size -= 1
+        
+    def peek(self):
+        if self.isEmpty():
+            print("Data Kosong !")
+        else:
+            if self._size == 1:
+                print(tuple([self._head._data, self._head._priority]))
+            else:
+                min_priority = self._head._priority
+                bantu = self._head
+                while bantu != None:
+                    if bantu._priority < min_priority:
+                        min_priority = bantu._priority
+                    bantu = bantu._next
+
+                bantu = self._head
+                while bantu._priority != min_priority:
+                    bantu = bantu._next
+                print(tuple([bantu._data,bantu._priority]))
 
 
 if __name__ == "__main__":
@@ -90,3 +109,4 @@ if __name__ == "__main__":
     queue.remove()
     queue.remove()
     queue.printAll()
+    queue.peek()
